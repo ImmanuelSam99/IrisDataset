@@ -41,3 +41,5 @@ results <- resamples(list(lda=fit.lda, cart=fit.cart, knn=fit.knn, svm=fit.svm, 
 summary(results)
 dotplot(results)
 print(fit.lda)
+predictions <- predict(fit.lda, validation)
+confusionMatrix(predictions, validation$Species)
